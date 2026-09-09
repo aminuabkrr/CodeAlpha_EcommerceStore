@@ -88,7 +88,7 @@ async function apiRequest(endpoint, { method = 'GET', body, auth = false } = {})
   if (!response.ok) {
     // Session expired or invalid — clear stale auth so the nav reflects it
     if (response.status === 401 && auth) {
-      clearAuth();
+      handleSessionExpiry();
     }
     throw new Error(data.message || 'Something went wrong. Please try again.');
   }
