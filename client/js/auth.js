@@ -1,4 +1,8 @@
 function initLoginForm() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('expired') === 'true') {
+    alertBox.innerHTML = `<div class="alert alert-info">Your session expired — please log in again.</div>`;
+  }
   const form = document.getElementById('login-form');
   const alertBox = document.getElementById('login-alert');
   const submitBtn = document.getElementById('login-submit');
