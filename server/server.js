@@ -31,6 +31,7 @@ app.get('/api/health', (req, res) => {
 // --- API routes ---
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/products'));
+app.use('/api/orders', require('./routes/orders'));
 
 // --- Static frontend ---
 // Serves the client folder so pages can be opened without a separate frontend server.
