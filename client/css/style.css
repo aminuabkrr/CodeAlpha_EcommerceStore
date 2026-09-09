@@ -369,6 +369,60 @@ select:focus-visible, textarea:focus-visible {
   margin-top: auto;
 }
 
+/* ---- Tabs ---- */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.6rem 0.25rem;
+  margin-right: 1.25rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tab-btn.active { color: var(--ink); border-bottom-color: var(--marigold); }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ---- Admin table ---- */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.admin-table th, .admin-table td {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9375rem;
+}
+
+.admin-table th {
+  background: var(--mist);
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+.admin-table tbody tr:last-child td { border-bottom: none; }
+
+.admin-table-actions { display: flex; gap: 0.5rem; }
+
+@media (max-width: 640px) {
+  .admin-table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+
 /* ---- States ---- */
 .empty-state, .loading-state {
   text-align: center;
