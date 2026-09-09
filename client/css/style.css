@@ -503,6 +503,57 @@ select:focus-visible, textarea:focus-visible {
   margin-top: 0.5rem;
 }
 
+/* ---- Checkout ---- */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .checkout-grid { grid-template-columns: 1fr; }
+}
+
+.order-summary {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.summary-line {
+  font-size: 0.875rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-total {
+  padding-top: 0.75rem;
+  font-size: 1.0625rem;
+}
+
+/* ---- Orders list ---- */
+.order-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.order-card-header { margin-bottom: 0.75rem; }
+
+.order-date {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.order-card-total {
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
 /* ---- Footer ---- */
 .footer {
   border-top: 1px solid var(--border);
