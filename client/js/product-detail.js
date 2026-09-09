@@ -19,6 +19,7 @@ async function loadProductDetail() {
 }
 
 function renderProductDetail(product) {
+  
   const mount = document.getElementById('product-detail');
   const outOfStock = product.stock === 0;
 
@@ -37,7 +38,7 @@ function renderProductDetail(product) {
           ${outOfStock ? 'Out of stock' : `${product.stock} in stock`}
         </p>
 
-        <div id="add-to-cart-alert"></div>
+        <div id="add-to-cart-alert" aria-live="polite"></div>
 
         ${
           outOfStock
@@ -47,7 +48,7 @@ function renderProductDetail(product) {
                 <label for="qty-input" class="form-label">Quantity</label>
                 <div class="qty-control">
                   <button type="button" id="qty-minus" class="btn btn-secondary btn-sm" aria-label="Decrease quantity">−</button>
-                  <input type="number" id="qty-input" class="form-input" value="1" min="1" max="${product.stock}" style="width: 64px; text-align: center;">
+                  <input type="number" id="qty-input" class="form-input" value="1" min="1" max="${product.stock}" aria-label="Quantity" style="width: 64px; text-align: center;">
                   <button type="button" id="qty-plus" class="btn btn-secondary btn-sm" aria-label="Increase quantity">+</button>
                 </div>
               </div>
