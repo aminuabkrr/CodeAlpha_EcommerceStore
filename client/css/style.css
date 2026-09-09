@@ -19,6 +19,55 @@
   --rust: #c0392b;
   --rust-bg: #fbebe9;
 
+
+   /* ---- Hero ---- */
+.hero {
+  background: var(--mist);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+  padding: 3.5rem 1.25rem;
+  max-width: 640px;
+}
+
+.hero-sub {
+  color: var(--ink-soft);
+  margin: 0.75rem 0 1.5rem;
+  font-size: 1.0625rem;
+}
+
+/* ---- Category pills ---- */
+.category-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.category-pill:hover { border-color: var(--ink); }
+
+/* ---- Filter bar ---- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .filter-bar .form-input,
+  .filter-bar .form-select {
+    max-width: 100% !important;
+    flex: 1 1 100%;
+  }
+}
   /* Type */
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', -apple-system, sans-serif;
