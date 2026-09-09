@@ -37,6 +37,19 @@ function logout() {
   window.location.href = 'index.html';
 }
 
+// Add near the other auth helpers
+function handleSessionExpiry() {
+  clearAuth();
+  const currentPage = window.location.pathname.split('/').pop();
+  const protectedPages = ['checkout.html', 'orders.html', 'admin.html'];
+
+  if (protectedPages.includes(currentPage)) {
+    window.location.href = `login.html?redirect=${currentPage}&expired=true`;
+  } else {
+    renderNav(); // just refresh nav state on public pages
+  }
+}
+
 // ---- Cart count helper (full cart logic lives in cart.js) ----
 function getCartCount() {
   const raw = localStorage.getItem(CART_KEY);
