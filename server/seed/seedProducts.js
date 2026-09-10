@@ -4,7 +4,6 @@ const connectDB = require('../config/db');
 const Product = require('../models/Product');
 
 const sampleProducts = [
-  // Electronics
   {
     name: 'Aurora Wireless Earbuds',
     description: 'True wireless earbuds with active noise cancellation, 30-hour battery life via charging case, and IPX5 water resistance. Ideal for workouts and daily commutes.',
@@ -37,8 +36,6 @@ const sampleProducts = [
     category: 'Electronics',
     stock: 25,
   },
-
-  // Fashion
   {
     name: 'Classic Denim Jacket',
     description: 'Timeless mid-wash denim jacket with a relaxed fit, button front, and durable cotton construction.',
@@ -63,8 +60,6 @@ const sampleProducts = [
     category: 'Fashion',
     stock: 55,
   },
-
-  // Accessories
   {
     name: 'Heritage Leather Wallet',
     description: 'Slim bifold wallet crafted from genuine leather with RFID-blocking lining and six card slots.',
@@ -89,8 +84,6 @@ const sampleProducts = [
     category: 'Accessories',
     stock: 35,
   },
-
-  // Home
   {
     name: 'Cascade Ceramic Pour-Over Set',
     description: 'Hand-glazed ceramic pour-over coffee dripper with matching carafe, holds up to 4 cups.',
@@ -115,8 +108,6 @@ const sampleProducts = [
     category: 'Home',
     stock: 60,
   },
-
-  // Computing
   {
     name: 'DriftKey Mechanical Keyboard',
     description: 'Compact 75% mechanical keyboard with hot-swappable switches, RGB backlighting, and USB-C connection.',
@@ -154,8 +145,6 @@ const sampleProducts = [
 const seedDatabase = async () => {
   try {
     await connectDB();
-
-    // Clear existing products so re-running the seed doesn't create duplicates
     await Product.deleteMany();
     console.log('Existing products cleared');
 
