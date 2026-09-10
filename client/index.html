@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="A full stack e-commerce store built with Node.js, Express, MongoDB, and vanilla JavaScript — CodeAlpha internship project.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>">
+  <title>CodeAlpha Store — Everyday goods, honestly priced</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar"><div id="main-nav"></div></nav>
+
+  <header class="hero">
+    <div class="container hero-inner">
+      <h1>Everyday goods, chosen carefully.</h1>
+      <p class="hero-sub">Electronics, fashion, accessories, home, and computing gear — curated in one place, with clear pricing and no surprises at checkout.</p>
+      <a href="products.html" class="btn btn-primary">Shop all products</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="category-row">
+        <a href="products.html?category=Electronics" class="category-pill">Electronics</a>
+        <a href="products.html?category=Fashion" class="category-pill">Fashion</a>
+        <a href="products.html?category=Accessories" class="category-pill">Accessories</a>
+        <a href="products.html?category=Home" class="category-pill">Home</a>
+        <a href="products.html?category=Computing" class="category-pill">Computing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="flex-between" style="margin-bottom: 1.25rem;">
+        <h2>New arrivals</h2>
+        <a href="products.html" class="btn btn-secondary btn-sm">View all</a>
+      </div>
+      <div id="featured-grid" class="product-grid">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          Loading products…
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      CodeAlpha_EcommerceStore — a full stack project built for the CodeAlpha Full Stack Development Internship.
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadFeaturedProducts();
+    });
+  </script>
+</body>
+</html>

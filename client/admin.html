@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A full stack e-commerce store built with Node.js, Express, MongoDB, and vanilla JavaScript — CodeAlpha internship project.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>">
+  <title>Admin Dashboard — CodeAlpha Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar"><div id="main-nav"></div></nav>
+
+  <section class="section">
+    <div class="container">
+      <h1 style="margin-bottom: 1.25rem;">Admin dashboard</h1>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="products-tab">Products</button>
+        <button class="tab-btn" data-tab="orders-tab">Orders</button>
+      </div>
+
+      <!-- PRODUCTS TAB -->
+      <div id="products-tab" class="tab-panel active">
+        <div class="flex-between" style="margin-bottom: 1rem;">
+          <h2>Manage products</h2>
+          <button class="btn btn-primary" id="new-product-btn">Add product</button>
+        </div>
+
+        <div id="product-form-panel" class="form-card" style="display:none; max-width: 480px; margin: 0 0 1.5rem;">
+          <h3 id="product-form-title" style="margin-bottom: 1rem;">Add product</h3>
+          <div id="product-form-alert" aria-live="polite"></div>
+          <form id="product-form" novalidate>
+            <input type="hidden" id="product-id">
+
+            <div class="form-group">
+              <label class="form-label" for="p-name">Name</label>
+              <input type="text" id="p-name" class="form-input" required>
+              <div class="form-error" id="p-name-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="p-description">Description</label>
+              <textarea id="p-description" class="form-textarea" rows="3" required></textarea>
+              <div class="form-error" id="p-description-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="p-price">Price ($)</label>
+              <input type="number" id="p-price" class="form-input" min="0" step="0.01" required>
+              <div class="form-error" id="p-price-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="p-image">Image URL</label>
+              <input type="url" id="p-image" class="form-input" required>
+              <div class="form-error" id="p-image-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="p-category">Category</label>
+              <select id="p-category" class="form-select" required>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Home">Home</option>
+                <option value="Computing">Computing</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="p-stock">Stock quantity</label>
+              <input type="number" id="p-stock" class="form-input" min="0" required>
+              <div class="form-error" id="p-stock-error"></div>
+            </div>
+
+            <div class="flex gap-md">
+              <button type="submit" class="btn btn-primary" id="product-form-submit">Save product</button>
+              <button type="button" class="btn btn-secondary" id="product-form-cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="admin-products-list">
+          <div class="loading-state"><div class="spinner"></div>Loading products…</div>
+        </div>
+      </div>
+
+      <!-- ORDERS TAB -->
+      <div id="orders-tab" class="tab-panel">
+        <h2 style="margin-bottom: 1rem;">All orders</h2>
+        <div id="admin-orders-list">
+          <div class="loading-state"><div class="spinner"></div>Loading orders…</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (requireAuth() && requireAdmin()) initAdminPage();
+    });
+  </script>
+</body>
+</html>

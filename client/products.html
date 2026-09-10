@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="A full stack e-commerce store built with Node.js, Express, MongoDB, and vanilla JavaScript — CodeAlpha internship project.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>">
+  <title>All Products — CodeAlpha Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar"><div id="main-nav"></div></nav>
+
+  <section class="section">
+    <div class="container">
+      <h1 style="margin-bottom: 1.25rem;">Products</h1>
+
+      <div class="filter-bar">
+        <input
+          type="search"
+          id="search-input"
+          class="form-input"
+          placeholder="Search products…"
+          style="max-width: 280px;"
+        >
+
+        <select id="category-select" class="form-select" style="max-width: 180px;">
+          <option value="">All categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Home">Home</option>
+          <option value="Computing">Computing</option>
+        </select>
+
+        <select id="sort-select" class="form-select" style="max-width: 180px;">
+          <option value="newest">Newest first</option>
+          <option value="price_asc">Price: low to high</option>
+          <option value="price_desc">Price: high to low</option>
+        </select>
+      </div>
+
+      <div id="products-grid" class="product-grid" style="margin-top: 1.5rem;">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          Loading products…
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      CodeAlpha_EcommerceStore — a full stack project built for the CodeAlpha Full Stack Development Internship.
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', initProductsPage);
+  </script>
+</body>
+</html>
