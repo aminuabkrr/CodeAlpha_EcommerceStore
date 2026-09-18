@@ -234,4 +234,4 @@ To deploy yourself, this project is compatible with any Node.js hosting platform
 
 ## Author
 
-Built by [Your Name] as part of the CodeAlpha Full Stack Development Internship, Task 1.
+Built by Aminu Abubakar, as part of the CodeAlpha Full Stack Development Internship, Task 1.
