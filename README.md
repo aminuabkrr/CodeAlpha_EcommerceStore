@@ -229,6 +229,10 @@ To deploy yourself, this project is compatible with any Node.js hosting platform
 ![Home page](screenshots/home.png)
 ![Products page](screenshots/products.png)
 ![Admin dashboard](screenshots/admin.png)
+![Products page](screenshots/product_detail.png)
+![Admin dashboard](screenshots/cart.png)
+![Products page](screenshots/order.png)
+![Admin dashboard](screenshots/checkout.png)
 
 ---
 
