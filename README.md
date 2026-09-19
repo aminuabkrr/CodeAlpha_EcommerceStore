@@ -218,7 +218,11 @@ The project was tested manually end-to-end, covering:
 
 The application is fully functional and has been verified to run correctly in a local/cloud development environment (Node.js + MongoDB Atlas), confirmed via direct API testing (`curl` health checks, seeding, and full request/response cycles). A public hosted demo link will be added here once deployment is finalized.
 
-To deploy yourself, this project is compatible with any Node.js hosting platform (Render, Railway, Replit Deployments, etc.) — set the same environment variables listed above in your host's secrets/environment configuration.
+## Live Demo
+
+🔗 https://codealpha-ecommercestore-cd32.onrender.com
+
+Note: hosted on Render's free tier — the server spins down after 15 minutes of inactivity, so the first request after a period of idle time may take 30–60 seconds to respond while it wakes up.
 
 ---
 
