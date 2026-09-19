@@ -216,7 +216,7 @@ The project was tested manually end-to-end, covering:
 
 ## Deployment
 
-The application is fully functional and has been verified to run correctly in a local/cloud development environment (Node.js + MongoDB Atlas), confirmed via direct API testing (`curl` health checks, seeding, and full request/response cycles). A public hosted demo link will be added here once deployment is finalized.
+The application is fully functional and has been verified to run correctly in a local/cloud development environment (Node.js + MongoDB Atlas), confirmed via direct API testing (`curl` health checks, seeding, and full request/response cycles). 
 
 ## Live Demo
 
@@ -237,6 +237,8 @@ Note: hosted on Render's free tier — the server spins down after 15 minutes of
 ![Admin dashboard](screenshots/cart.png)
 ![Products page](screenshots/order.png)
 ![Admin dashboard](screenshots/checkout.png)
+![Products page](screenshots/register.png)
+
 
 ---
 
